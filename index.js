@@ -3,7 +3,7 @@ const {connectWithDB}=require("./connection.js")
 const urlRouter=require("./Router/routeurl.js")
 const viewRouter=require("./Router/view.js")
 const static=require("./Router/staticfile.js")
-const userRouter=require("./View/Router/userRouter.js")
+const userRouter=require("./Router/userRouter.js")
 const path=require("path")
 
 
