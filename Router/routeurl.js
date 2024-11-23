@@ -18,9 +18,11 @@ router.post("/",async (req, res) => {
     const shortid = generateShortHash();
     const urlobject = new urlModel({ url: id, shorturl: shortid });
     await urlobject.save();
-    console.log("Url object is ", urlobject);
-
-    res.status(201).send(`<h1>Short URL Generated http://localhost:${PORT}/url/${shortid}</h1>`);
+    
+  console.log("Url object is ", urlobject);
+  const fullUrl = `${req.protocol}://${req.get('host')}/url/${shortid}`;
+  res.status(201).send(`<h1>Short URL Generated: ${fullUrl}</h1>`);
+  
   })
 
 
